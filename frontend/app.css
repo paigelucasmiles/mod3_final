@@ -1,12 +1,74 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: hsl(210, 24%, 16%)
+    color: hsl(210, 24%, 16%);
+    background-color: hsl(221, 68%, 93%);
+    margin: 0px;
 }
 
-.entry-cards-container {
+header {
+    background-color: hsl(232, 51%, 36%);
+    padding: 10px;
+    color: white;
+    display: grid;
+}
+
+h3 > a {
+    text-decoration: none;
+    color: hsl(210, 24%, 16%);
+}
+
+h3 > a:hover {
+    color: hsl(197, 92%, 61%)
+}
+
+label {
+    color: hsl(210, 24%, 16%);
+}
+
+.new-entry-form-container {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: white;
+    border-radius: 5px;
+    width: fit-content;
+    justify-self: center;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.entry-card-container {
+    padding: 50px;;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.entry-kind-container {
+    display: flex;
+    justify-content: center;
+}
+
+.tag-container {
+    display: flex;
+    justify-content: left;
+}
+
+.tag {
+    font-size: 12px;
+    background-color: hsl(360, 100%, 87%);
+    color: hsl(348, 94%, 20%);
+    width: fit-content;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 2px;
 }
 
 .entry-card {
@@ -16,9 +78,10 @@ body {
     padding-left: 30px;
     padding-right: 20px;
     margin: 20px;
-    display: flex;
+    width: fit-content;
+    /* display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column; */
     border: 1px;
     border-style: solid;
     border-color: hsl(198, 20%, 90%);
@@ -27,4 +90,16 @@ body {
     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
+}
+
+.tag-container {
+    display: inline-flex;
+}
+
+.primary {
+    fill: hsl(232, 51%, 36%);
+}
+
+.secondary {
+    fill: hsl(224, 67%, 76%);
 }
