@@ -9,7 +9,39 @@ auth_review = Entry.create(
 )
 
 auth = Topic.create(
-    name: "auth"
+    name: "Auth"
+)
+
+project_managment = Topic.create(
+    name: "Project Management"
+)
+
+rails = Topic.create(
+    name: "Rails"
+)
+
+agile = Topic.create(
+    name: "Agile"
+)
+
+javascript = Topic.create(
+    name: "JavaScript"
+)
+
+css = Topic.create(
+    name: "CSS"
+)
+
+html = Topic.create(
+    name: "HTML"
+)
+
+git = Topic.create(
+    name: "Git"
+)
+
+github = Topic.create(
+    name: "GitHub"
 )
 
 tag = Tag.create(
