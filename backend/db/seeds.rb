@@ -7,6 +7,23 @@ auth_review = Entry.create(
     url: "https://www.youtube.com/watch?v=KL4wGc1Vxm0&feature=youtu.be",
     kind: "video"
 )
+lean_software_development = Entry.create(
+    name: "Lean Software Development",
+    url: "https://medium.com/@kyle.coberly/lean-software-development-29c49b5860a3",
+    kind: "blog post"
+)
+
+linear_gradient = Entry.create(
+    name: "Linear Gradient",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient",
+    kind: "documentation"
+)
+
+fe_auth_with_errors = Entry.create(
+    name: "Front End Auth with Error Messages",
+    url: "https://www.youtube.com/watch?v=6PLRvPhDy9U&feature=youtu.be",
+    kind: "video"
+)
 
 auth = Topic.create(
     name: "Auth"

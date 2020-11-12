@@ -14,6 +14,16 @@ class TagsController < ApplicationController
         end
     end
 
+    def show
+        @tag = Tag.find_all_by id: params[:id]
+        render json: @tag, include: [:entries, :topics]
+    end
+
+    def destroy
+        @delete_tag = Tag.find_by id: params[:id]
+        @delete_tag.destroy
+    end
+
     def tag_params
         params.require(:tag).permit(:name, :entry_id, :topic_id)
     end

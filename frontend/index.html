@@ -9,7 +9,16 @@
     </head>
     <body>
         <header>
-            <h1>Resources</h1>
+            <nav class="top-bar">
+            <div class="title">
+                <h1 class="page-title">Resources</h1>
+            </div>
+            <div class="search">
+                <form id="search-form" class="" action="" method="GET">
+                    <input id="topic-search-input" type="text" name="name" placeholder="Search">
+                </form>
+            </div>
+            </nav>
             <div class="new-entry-form-container">
                 <form class="new-entry-form">
                     <input type="string" name="name" placeholder="Title">
@@ -17,7 +26,7 @@
                     <select name="kind" class="kind-filter">
                         <option value="">Resource Type</option>
                     </select>
-                    <button id="new-entry-submit-button" type="submit">submit</button>
+                    <button id="new-entry-submit-button" type="submit">save</button>
                 </form>
             </div>
         </header>

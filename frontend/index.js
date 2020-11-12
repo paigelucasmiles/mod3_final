@@ -6,6 +6,7 @@ const tagsURL =  `${baseURL}/tags`
 const $entryCardContainer = document.querySelector(".entry-card-container")
 const $newEntryForm = document.querySelector(".new-entry-form")
 const $kindFilter = document.querySelector(".kind-filter")
+const $searchForm = document.querySelector("#search-form")
 
 Promise.all([
     fetch(entriesURL),
@@ -21,10 +22,28 @@ Promise.all([
     accessEntries(allEntries, allTopics)
     renderOptions(allEntries)
     addNewEntryEventListener(allTopics)
+    addSearchFormEventListener(allEntries, allTopics)
 })
 
 function parseJSON(response){
     return response.json()
+}
+
+function addSearchFormEventListener(allEntries, allTopics){
+    $searchForm.addEventListener("input", (event) => handleSearchSubmission(event, allEntries, allTopics))
+}
+
+function handleSearchSubmission(event, allEntries, allTopics){
+    event.preventDefault()
+    const searchInput = document.querySelector("#topic-search-input").value
+    const searchedValueArray = allEntries.filter(entry => entry.name.toLowerCase().includes(searchInput.toLowerCase()))
+    clearResources()
+    accessEntries(searchedValueArray, allTopics)
+}   
+
+function clearResources(){
+    const $resourceContainer = document.querySelector(".entry-card-container")
+    $resourceContainer.textContent = ""
 }
 
 function addNewEntryEventListener(allTopics){
@@ -82,7 +101,7 @@ function renderEntry(entry, allTopics){
     const $entryTagContainer = document.createElement("div")
     $entryTagContainer.classList.add("entry-tag-container")
     $entryTagContainer.id = `tag-entry-id-${entry.id}`
-    accessTags(entry, $entryTagContainer)
+    accessTags(entry, $entryTagContainer, allTopics)
 
     const $tagDropdownForm = document.createElement("form")
     $tagDropdownForm.classList.add("tag-dropdown-form")
@@ -132,25 +151,75 @@ function renderKindIcon($entryKindContainer, entry){
 
 
 
-function accessTags(entry, $entryTagContainer){
+function accessTags(entry, $entryTagContainer, allTopics){
     let tagsList = entry.tags
     if (!tagsList){
         return
     } else {
-        tagsList.forEach((tag) => renderTags(tag, $entryTagContainer))
+        tagsList.forEach((tag) => renderTags(tag, $entryTagContainer, allTopics))
     }
 }
 
 
 
-function renderTags(tag, $entryTagContainer){
+function renderTags(tag, $entryTagContainer, allTopics){
+    let currentTopic = allTopics.filter(topic => topic.id === tag.topic_id)[0]
+    const currentTopicId = currentTopic.id
+    const currentTopicName = currentTopic.name
+
+    const $individualTagContainer = document.createElement("div")
+    $individualTagContainer.classList.add("indiv-tag-cont")
+
     const $tagElement = document.createElement("p")
     $tagElement.classList.add("tag")
-    $tagElement.innerHTML = `<a href="/showTag.html?id=${tag.id}">${tag.name.toUpperCase()}</a>`
+    $tagElement.id = `topic-id-${currentTopicId}`
+    $tagElement.innerHTML = `<a href="" id="topic-id-${currentTopicId}">${currentTopicName.toUpperCase()}</a>`
+    $tagElement.addEventListener("click", (event) => {
+        event.preventDefault()
+        // const filterTopicSelected = event.target.innerText
+        let selectedTopicId = event.target.id.split("-")
+        selectedTopicId = parseInt(selectedTopicId[selectedTopicId.length - 1])
+        const filteredTopicsArray = allTopics.filter(topic => topic.id === selectedTopicId)[0]
+        const filteredEntries = filteredTopicsArray.entries
+        clearResources()
+        accessEntries(filteredEntries, allTopics)
+        const $grabTitle = document.querySelector(".page-title")
+        $grabTitle.textContent = `Resources - ${tag.name}`
+    })
 
-    $entryTagContainer.prepend($tagElement)
+    const $deleteTagButton = document.createElement("button")
+    $deleteTagButton.classList.add("delete-tag-btn")
+    $deleteTagButton.textContent = "x"
+    $deleteTagButton.value = "delete"
+    $deleteTagButton.addEventListener("click", (event) => {
+        let newTopicId = event.target.parentNode.id.split("-")
+        newTopicId = parseInt(newTopicId[newTopicId.length - 1])
+
+        let newEntryId = event.target.parentNode.parentNode.parentNode.id.split("-")
+        newEntryId = parseInt(newEntryId[newEntryId.length - 1])
+
+        const tagToDelete = {
+            id: tag.id,
+            name: event.target.parentNode.textContent.slice(0, -1),
+            topic_id: newTopicId,
+            entry_id: newEntryId
+        }
+
+        event.target.parentNode.parentNode.remove()
+
+        fetch(`${tagsURL}/${tag.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(tagToDelete)
+        })
+    })
+
+    $tagElement.append($deleteTagButton)
+    $individualTagContainer.append($tagElement)
+    $entryTagContainer.prepend($individualTagContainer)
 }
-
 
 
 function renderAddTagForm(entry, $entryCard, $tagDropdownForm, allTopics){
@@ -199,7 +268,7 @@ function handleAddTagClick(event, allTopics, $entryTagContainer){
         topic_id: findTopicId.id
     }
 
-    renderTags(newTagData, $entryTagContainer)
+    renderTags(newTagData, $entryTagContainer, allTopics)
 
     fetch(tagsURL, {
         method: "POST",

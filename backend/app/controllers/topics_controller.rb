@@ -17,4 +17,9 @@ class TopicsController < ApplicationController
     def topic_params
         params.require(:topic).permit(:name, :url, :kind)
     end
+
+    def show
+        @topic = Topic.where(id: params[:id]).all
+        render json: @topic, include: [:entries, :tags]
+    end
 end
