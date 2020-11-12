@@ -20,7 +20,7 @@ linear_gradient = Entry.create(
 )
 
 fe_auth_with_errors = Entry.create(
-    name: "Front End Auth with Error Messages",
+    name: "Front End Auth w/ Error Messages",
     url: "https://www.youtube.com/watch?v=6PLRvPhDy9U&feature=youtu.be",
     kind: "video"
 )
@@ -90,8 +90,32 @@ ruby = Topic.create(
     name: "Ruby"
 )
 
-tag = Tag.create(
-    name: "Auth",
-    entry: auth_review,
-    topic: auth
-)
+# tag1 = Tag.create(
+#     name: "Auth",
+#     entry: auth_review,
+#     topic: auth
+# )
+
+# tag2 = Tag.create(
+#     name: "Auth",
+#     entry: auth_1,
+#     topic: auth
+# )
+
+# tag3 = Tag.create(
+#     name: "Auth",
+#     entry: auth_2,
+#     topic: auth
+# )
+
+# tag4 = Tag.create(
+#     name: "Auth",
+#     entry: auth_3,
+#     topic: auth
+# )
+
+# tag4 = Tag.create(
+#     name: "Rails",
+#     entry: ar_validations,
+#     topic: rails
+# )

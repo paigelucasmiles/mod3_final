@@ -15,12 +15,13 @@ class EntriesController < ApplicationController
     end
 
     def show
-        @entry = Entry.find_all_by id: params[:id]
+        @entry = Entry.find_by id: params[:id]
         render json: @entry, include: [:tags, :topics]
     end
 
     def destroy
-        @entry.destroy
+        @delete_entry = Entry.find_by id: params[:id]
+        @delete_entry.destroy
     end
 
     def entry_params

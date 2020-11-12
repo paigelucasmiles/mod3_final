@@ -87,6 +87,11 @@ function renderEntry(entry, allTopics){
     $entryCard.classList.add("entry-card")
     $entryCard.id = `entry-id-${entry.id}`
 
+    const $deleteCardButton = document.createElement("button")
+    $deleteCardButton.classList.add("delete-card-btn")
+    $deleteCardButton.textContent = "x"
+    addDeleteEventListener(entry, $deleteCardButton)
+
     const $allComponentContainer = document.createElement("div")
     $allComponentContainer.classList.add("all-component-container")
 
@@ -109,7 +114,7 @@ function renderEntry(entry, allTopics){
 
     renderAddTagForm(entry, $entryCard, $tagDropdownForm, allTopics)
 
-    $entryCard.append($allComponentContainer)
+    $entryCard.append($allComponentContainer, $deleteCardButton)
     $allComponentContainer.append($entryName, $entryKindContainer, $entryTagContainer, $tagDropdownForm)
     $entryCardContainer.prepend($entryCard)
     
@@ -283,3 +288,21 @@ function handleAddTagClick(event, allTopics, $entryTagContainer){
     event.target.reset()
 }
 
+
+function addDeleteEventListener(entry, $deleteCardButton){
+    $deleteCardButton.addEventListener("click", (event) => handleCardDeleteClick(event, entry))
+}
+
+function handleCardDeleteClick(event, entry){
+    const entryToDelete = entry
+
+    event.target.parentNode.remove()
+
+    fetch(`${entriesURL}/${entry.id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }, 
+        body: JSON.stringify(entryToDelete)
+    })
+}
