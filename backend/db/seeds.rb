@@ -25,6 +25,31 @@ fe_auth_with_errors = Entry.create(
     kind: "video"
 )
 
+ar_validations = Entry.create(
+    name: "ActiveRecord Validations Docs",
+    url: "https://guides.rubyonrails.org/active_record_validations.html#validation-helpers",
+    kind: "documentation"
+)
+
+auth_1 = Entry.create(
+    name: "Auth - Part 1",
+    url: "https://www.youtube.com/watch?v=A95_w99kIV0&feature=youtu.be",
+    kind: "video"
+)
+
+auth_2 = Entry.create(
+    name: "Auth - Part 2",
+    url: "https://youtu.be/PBZKHA2v8YQ",
+    kind: "video"
+)
+
+auth_3 = Entry.create(
+    name: "Auth - Part 3",
+    url: "https://youtu.be/KL4wGc1Vxm0",
+    kind: "video"
+)
+
+
 auth = Topic.create(
     name: "Auth"
 )
@@ -59,6 +84,10 @@ git = Topic.create(
 
 github = Topic.create(
     name: "GitHub"
+)
+
+ruby = Topic.create(
+    name: "Ruby"
 )
 
 tag = Tag.create(

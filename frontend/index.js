@@ -111,7 +111,7 @@ function renderEntry(entry, allTopics){
 
     $entryCard.append($allComponentContainer)
     $allComponentContainer.append($entryName, $entryKindContainer, $entryTagContainer, $tagDropdownForm)
-    $entryCardContainer.append($entryCard)
+    $entryCardContainer.prepend($entryCard)
     
 }
 
@@ -185,6 +185,8 @@ function renderTags(tag, $entryTagContainer, allTopics){
         accessEntries(filteredEntries, allTopics)
         const $grabTitle = document.querySelector(".page-title")
         $grabTitle.textContent = `Resources - ${tag.name}`
+        const $grabBackButton = document.querySelector("#back-btn")
+        $grabBackButton.textContent = "< back to all resources"
     })
 
     const $deleteTagButton = document.createElement("button")

@@ -5,13 +5,22 @@ class EntriesController < ApplicationController
     end
 
     def create
-        @entry = Entry.new(entry_params)
-        if @entry.valid?
-            @entry.save
-            render json: @entry, status: :created
+        @new_entry = Entry.new(entry_params)
+        if @new_entry.valid?
+            @new_entry.save
+            render json: @new_entry, status: :created
         else
-            render json: { errors: @entry.errors.full_messages }, status: :unprocessable_entity
+            render json: { errors: @new_entry.errors.full_messages }, status: :unprocessable_entity
         end
+    end
+
+    def show
+        @entry = Entry.find_all_by id: params[:id]
+        render json: @entry, include: [:tags, :topics]
+    end
+
+    def destroy
+        @entry.destroy
     end
 
     def entry_params

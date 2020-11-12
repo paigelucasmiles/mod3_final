@@ -1,4 +1,5 @@
 body {
+
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: hsl(210, 24%, 16%);
     height: 100%;
@@ -34,7 +35,39 @@ h3 > a {
 }
 
 h3 > a:hover {
-    color: hsl(197, 92%, 61%)
+    color: hsl(44, 92%, 63%);
+}
+
+p > a:hover {
+    color: hsl(221, 68%, 93%);
+    /* background-color: hsl(44, 92%, 63%); */
+}
+
+p:hover {
+    background-color: hsl(232, 51%, 36%);
+}
+
+h4 {
+    margin-block-start: 4px;
+    margin-block-end: 4px;
+    position: relative;
+    top: 46px;
+    left: 20px;
+}
+
+.form-title {
+    display: block;
+    background: #647acb;
+    margin-right: -20;
+    padding-left: 15px;
+    margin-left: -40px;
+    margin-right: -40px;
+    font-size: 13px;
+    font-weight: 300;
+    height: 18px;
+    /* positon: relative; */
+    font-size: 13px;
+    color: white;
 }
 
 .search {
@@ -47,22 +80,23 @@ h3 > a:hover {
 
 #new-entry-submit-button {
     background-color: transparent;
-    color: hsl(214, 15%, 91%); 
-    background-color: hsl(234, 45%, 45%);
+    color:hsl(230, 49%, 41%);
+    background-color: none;
+    border: 1px solid hsl(230, 49%, 41%);
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 7px;
     padding-right: 7px;
-    margin: 5px; 
-    border: none;
+    margin: 5px;
+    /* border: none; */
     border-radius: 2px;
 }
 
 .new-entry-form-container {
     position: relative;
-    margin-top: 45px;
-    margin-bottom: -45px;
-    padding-top: 20px;
+    margin-top: 0px;
+    margin-bottom: -77px;
+    padding-top: 8px;
     padding-bottom: 20px;
     padding-right: 40px;
     padding-left: 40px;
@@ -102,7 +136,7 @@ input {
 .entry-card-container {
     background-color: hsl(221, 68%, 93%);
     padding-bottom: 50px;
-    padding-top: 45px;
+    padding-top: 80px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 5px;
@@ -110,7 +144,7 @@ input {
     flex-wrap: wrap;
     flex: auto;
     /* align-content: center; */
-    margin-top: 12px;
+    margin-top: 0px;
     justify-content: center;
     height: 100%;
     /* width: auto; */
@@ -235,4 +269,11 @@ input {
     border: none;
     background-color: hsl(216, 33%, 97%);
     color: hsl(209, 14%, 37%);
+}
+
+#back-btn {
+    /* text-decoration: underline; */
+    color: hsl(232, 51%, 36%);
+    font-size: 16px;
+    font-weight: 500;
 }
