@@ -2,13 +2,13 @@
 
 <h2><img src="https://i.ibb.co/TBWb6FL/Storytelling.png" alt="Storytelling" border="0"> Student Resources</h2>
 <p>
-Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the PokeAPI, we created a Pokedex with the first Generation (Kanto) Pokemon. Our intention with this project was to work with a larger, more complex API and expand our knowledge on styling with CSS.<br>
-<br>“It’s more important to master the cards you’re holding than to complain about the ones your opponent was dealt.” – Grimsley :zap:</br>
+This student resources webapp utilizes Javascript, HTML, and CSS. The intention of this project was to build an app as a companion to my studies by providing a central location for saving resources key to my learning for later reference. Each resource can be tagged with high-level knowledge areas, and searched by name. 
 </p>
 
 <h2>Technologies</h2>
 
 <ul>
+ <li>Ruby on Rails</li>
  <li>JavaScript</li>
  <li>HTML5</li>
  <li>CSS</li>
@@ -16,7 +16,7 @@ Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the P
 
 <h2>Setup</h2>
 To run this project, install it locally by cloning this GitHub repository and opening it in your code editor.<br><br>
-From there, navigate into the folder titled <b>pokedex-frontend</b> and run <code>lite-server</code> in your terminal.<br><br>
+From there, navigate into the folder titled <b>backend</b> and run <code>rails s</code> in your terminal, in a second terminal tab, navigate to<b>frontend</b> and run <code>lite-server</code>.<br><br>
 This should prompt your browser to open a page at: <code>localhost:3001</code><br><br>
 You are now ready to start using the first iteration of our Pokedex! Please see our features section to learn more!<br><br>
 
