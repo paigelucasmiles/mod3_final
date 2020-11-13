@@ -21,7 +21,7 @@ This should prompt your browser to open a page at: <code>localhost:3001</code><b
 You are now ready to start using the first iteration of my student app. Please see the features section to learn more.<br><br>
 
 <h2>Instructions</h2>
-Once you've opened the app. You will see example resources, tagged with high-level topics. You can delete these by clicking the red "x" in the lower right hand corner of the respective card. Add your own resources using the <b>Save New Resource</b> form at the top on the page. After a resource is added you can add a tag to it from the dropdown list on the card and clicking the <b>add tag button</b>. 
+Once you've opened the app. You will see example resources, tagged with high-level topics. You can delete these by clicking the red "x" in the lower right hand corner of the respective card. Add your own resources using the <b>Save New Resource</b> form at the top on the page. After a resource is added you can add a tag to it from the dropdown list on the card and clicking the <b>add tag</b> button. 
 
 <h2>Code Examples</h2>
 
