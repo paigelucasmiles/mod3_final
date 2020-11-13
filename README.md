@@ -16,7 +16,7 @@ This student resources webapp utilizes Javascript, HTML, and CSS. The intention 
 
 <h2>Setup</h2>
 To run this project, install it locally by cloning this GitHub repository and opening it in your code editor.<br><br>
-From there, navigate into the folder titled <b>backend</b> and run <code>rails s</code> in your terminal, in a second terminal tab, navigate to<b>frontend</b> and run <code>lite-server</code>.<br><br>
+From there, navigate into the folder titled <b>backend</b> and run <code>rails s</code>. In a second terminal tab, navigate to<b>frontend</b> and run <code>lite-server</code>.<br><br>
 This should prompt your browser to open a page at: <code>localhost:3001</code><br><br>
 You are now ready to start using the first iteration of our Pokedex! Please see our features section to learn more!<br><br>
 
