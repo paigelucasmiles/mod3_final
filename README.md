@@ -112,5 +112,5 @@ With time, we would like to refactor our code and add features such as:
 <h2>Contact</h2>
 <a href="https://www.linkedin.com/in/paigeamiles/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Paige Miles" style="width:10px;height:10px;"></a>Paige Miles :evergreen_tree:<br>
 
-<h2>API Reference</h2>
-[PokeAPI](https://pokeapi.co/)
+<h2>References</h2>
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
