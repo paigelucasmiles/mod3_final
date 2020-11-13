@@ -16,9 +16,9 @@ This student resources webapp utilizes Javascript, HTML, and CSS. The intention 
 
 <h2>Setup</h2>
 To run this project, install it locally by cloning this GitHub repository and opening it in your code editor.<br><br>
-From there, navigate into the folder titled <b>backend</b> and run <code>rails s</code>. In a second terminal tab, navigate to<b>frontend</b> and run <code>lite-server</code>.<br><br>
+From there, navigate into the folder titled <b>backend</b> and run <code>rails db:migrate<code>, then <code>rails db:seed<code>. Next, serve the backend by running <code>rails s</code>. In a second terminal tab, navigate to the folder titles <b>frontend</b> and run <code>lite-server</code>.<br><br>
 This should prompt your browser to open a page at: <code>localhost:3001</code><br><br>
-You are now ready to start using the first iteration of our Pokedex! Please see our features section to learn more!<br><br>
+You are now ready to start using the first iteration of my student app! Please see the features section to learn more!<br><br>
 
 <h2>Instructions</h2>
 Once you have opened the project through lite-server, you can find all 151 First Generation Pokemon by either searching for its name or browsing Pokemon by type.<br><br>
